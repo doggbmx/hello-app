@@ -86,20 +86,19 @@ class _CounterFunctionsScreenState extends State<CounterFunctionsScreen> {
 
 class CustomFloatingButton extends StatelessWidget {
   final IconData iconData;
-  final VoidCallback onPressed;
+  // THIS WAS ADDED BEFORE THE CLASS LOL
+  final VoidCallback? onPressed;
   const CustomFloatingButton({
     super.key,
     required this.iconData,
-    required this.onPressed,
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      shape: const StadiumBorder(),
-      onPressed: () {
-        onPressed();
-      },
+      // shape: const StadiumBorder(),
+      onPressed: onPressed,
       child: Icon(
         iconData,
       ),
